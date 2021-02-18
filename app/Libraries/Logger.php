@@ -1,4 +1,6 @@
-<?php namespace App\Libraries;
+<?php
+
+namespace App\Libraries;
 
 use App\Entities\ApilogsEntity;
 use CodeIgniter\Controller;

@@ -5,5 +5,7 @@ if (!isset($routes)) {
 }
 
 $routes->group(API_PATH . '/user', ['namespace' => 'App\Modules\User\Controllers'], function ($subroutes) {
-    $subroutes->post('profile', 'Profile::userProfileInfo');
+    $subroutes->post('profile', 'User::userInfo');
+    $subroutes->post('userRegis', 'User::userRegis');
+    $subroutes->post('userLogin', 'User::userLogin');
 });

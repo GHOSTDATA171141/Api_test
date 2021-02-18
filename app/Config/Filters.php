@@ -45,7 +45,7 @@ class Filters extends BaseConfig
         'verifyAuthorization' => [
             'before' => [
                 API_PATH . '/user/change-pw',
-                // API_PATH . '/user/profile',
+                API_PATH . '/user/profile',
                 API_PATH . '/user/update-profile',
                 API_PATH . '/order',
                 API_PATH . '/order/*',

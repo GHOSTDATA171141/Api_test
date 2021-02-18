@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Libraries;
 
 use App\Libraries\Logger;
@@ -12,7 +13,6 @@ class APIRequest
     {
         $this->logger = new Logger();
         $this->curl = Services::curlrequest();
-
     }
 
     public function getRequestInput(IncomingRequest $request)
@@ -21,7 +21,7 @@ class APIRequest
             'Authorization' => $request->getHeaderLine("Authorization"),
             'Language' => $request->getHeaderLine("lang"),
             'Content-Type' => $request->getHeaderLine("Content-Type"),
-            'Park' => $request->getHeaderLine("Park"),
+            // 'Park' => $request->getHeaderLine("Park"),
         ];
 
         $input['method'] = $request->getMethod();

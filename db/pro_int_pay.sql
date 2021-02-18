@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2021 at 05:24 AM
+-- Generation Time: Feb 18, 2021 at 11:33 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -41,13 +41,6 @@ CREATE TABLE `apilogs` (
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `apilogs`
---
-
-INSERT INTO `apilogs` (`id`, `timestamp`, `requestMethod`, `requestUri`, `requestHeaders`, `requestParams`, `requestBody`, `responseBody`, `serviceName`, `created_at`, `updated_at`) VALUES
-(1, '2021-02-18 04:11:53', 'POST', 'api/v1/user/profile', '[]', '[]', '', '{\"resultCode\":200,\"resultMessage\":\"Success\",\"data\":\"User data\"}', 'get-profile', '2021-02-18 04:11:53', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -60,6 +53,28 @@ CREATE TABLE `ci_sessions` (
   `timestamp` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `create_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `create_at`) VALUES
+(12, 'withan', '$2y$10$QZ2TPVCHni.CcKJGkO5ydeDXcsG0KrZpOghne7aStLrtrBU7w31My', 'Withan', 'Wongsabut', '2021-02-18 09:21:26');
 
 --
 -- Indexes for dumped tables
@@ -79,6 +94,12 @@ ALTER TABLE `ci_sessions`
   ADD KEY `ci_sessions_timestamp` (`timestamp`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -86,7 +107,13 @@ ALTER TABLE `ci_sessions`
 -- AUTO_INCREMENT for table `apilogs`
 --
 ALTER TABLE `apilogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
