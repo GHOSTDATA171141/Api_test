@@ -5,6 +5,7 @@ namespace App\Modules\User\Repositories;
 use App\Libraries\Logger;
 use CodeIgniter\Controller;
 use App\Modules\User\Models\UserModel;
+use APP\Helpers\UserUtils;
 
 
 
@@ -18,6 +19,7 @@ class UserRepositories extends Controller
 
     public function getUserInfo($request)
     {
+        
         try {
             $response = [
                 'resultCode' => 200,
@@ -44,6 +46,9 @@ class UserRepositories extends Controller
             'password' => password_hash($request['payloads']['password'], PASSWORD_DEFAULT),
             'firstname' => $request['payloads']['firstname'],
             'lastname' => $request['payloads']['lastname'],
+            'province' => $request['payloads']['province'],
+            'amphur' => $request['payloads']['amphur'],
+            'district' => $request['payloads']['district'],
         ];
         $response =  $this->userModel->addUser($data);
         $this->logger->writeApiLogs($request, $response, 'user-regis');
@@ -60,5 +65,21 @@ class UserRepositories extends Controller
         $response = $this->userModel->getUserLogin($data);
         $this->logger->writeApiLogs($request, $response, 'user-login');
         return $response;
+    }
+
+    public function getUserProcess($request)
+    {
+        $response= $this->userModel->getAlluser();
+        $this->logger->writeApiLogs($request,$response,'user-list');
+        return $response;
+
+    }
+    public function getUserRefreshProcess($request)
+    {
+        $refreshToken = $request['payloads']['RefreshToken'];
+        $response = $this->userModel->getUserRefesh($refreshToken);
+        // $this->logger->writeApiLogs($request,$response,'user-refresh');
+        return $response;
+
     }
 }

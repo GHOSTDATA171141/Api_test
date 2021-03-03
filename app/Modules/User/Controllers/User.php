@@ -60,4 +60,24 @@ class User extends BaseController
 
         return $this->setResponseFormat('json')->respond($this->UserRepositories->loginProcess($request), 200);
     }
+
+    public function userList()
+    {
+        // $rules = [
+        //     'username' => 'required|string',
+        //     'firstname' => 'required|string',
+        //     'lastname' => 'required|string',
+        // ];
+
+        $request = $this->apiRequest->getRequestInput($this->request);
+        // return $this->setResponseFormat('json')->respond($request,200);
+        return  $this->setResponseFormat('json')->respond($this->UserRepositories->getUserProcess($request),200);
+    }
+    public function userReFresh()
+    {
+        $request = $this->apiRequest->getRequestInput($this->request);
+        // return  $this->setResponseFormat('json')->respond($this->UserRepositories->getUserRefreshProcess($request),200);
+        // return $this->UserRepositories->getUserRefreshProcess($request,200);
+        return $this->setResponseFormat('json')->respond($this->UserRepositories->getUserRefreshProcess($request) ,200);
+    }
 }
