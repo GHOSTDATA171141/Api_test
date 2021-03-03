@@ -48,41 +48,4 @@ class UserUtils
             return $result;
         }
     }
-    //////////////////
-    public function jwtTokenDecode($token)
-    {
-        try {
-            $response = (array) JWT::decode($token, JWT_KEY, array(JWT_ALGORITHM));
-            $result = array(
-                'resultCode' => 200,
-                'resultMessage' => 'Success',
-                'result' => $response
-            );
-        } catch (\InvalidArgumentException $e) {
-            $result = array(
-                'resultCode' => 401,
-                'resultMessage' => 'Invaild Token'
-            );
-        } catch (\Exception $e) {
-            $result = array(
-                'resultCode' => 401,
-                'resultMessage' => 'Unauthorized'
-            );
-        }
-        return $result;
-    }
-
-    public function jwtTokenEncode($data)
-    {
-        try {
-            $result = JWT::encode($data, JWT_KEY);
-            return $result;
-        } catch (Exception $e) {
-            $result = array(
-            'resultCode' => 500,
-            'resultMessage' => 'failed'
-        );
-            return $result;
-        }
-    }
 }

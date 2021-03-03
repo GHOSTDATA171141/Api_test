@@ -45,7 +45,7 @@ define(
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'admin_eportfolio',
+        'database' => 'pro_int_pay',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -63,30 +63,30 @@ define(
     ),
 );
 // } else {
-//    define(
-//     'DEFAULT_DATABSE',
-//     array(
-//       'DSN'      => '',
-//       'hostname' => 'localhost',
-//       'username' => 'admin_eport',
-//       'password' => 'HkgjpReZ',
-//       'database' => 'admin_eport',
-//       'DBDriver' => 'MySQLi',
-//       'DBPrefix' => '',
-//       'pConnect' => false,
-//       'DBDebug'  => true,
-//       'cacheOn'  => false,
-//       'cacheDir' => '',
-//       'charset'  => 'utf8',
-//       'DBCollat' => 'utf8_general_ci',
-//       'swapPre'  => '',
-//       'encrypt'  => false,
-//       'compress' => false,
-//       'strictOn' => false,
-//       'failover' => [],
-//       'port'     => 3306
-//     )
-// );
+//     define(
+//         'DEFAULT_DATABSE',
+//         array(
+//             'DSN' => '',
+//             'hostname' => 'localhost',
+//             'username' => 'admin_dba',
+//             'password' => 'Ttz0fkmv0omltqZV',
+//             'database' => 'dev_int_pay',
+//             'DBDriver' => 'MySQLi',
+//             'DBPrefix' => '',
+//             'pConnect' => false,
+//             'DBDebug' => true,
+//             'cacheOn' => false,
+//             'cacheDir' => '',
+//             'charset' => 'utf8',
+//             'DBCollat' => 'utf8_general_ci',
+//             'swapPre' => '',
+//             'encrypt' => false,
+//             'compress' => false,
+//             'strictOn' => false,
+//             'failover' => [],
+//             'port' => 3306
+//         ),
+//     );
 // }
 
 /*

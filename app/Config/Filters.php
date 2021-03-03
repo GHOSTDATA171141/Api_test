@@ -13,7 +13,6 @@ class Filters extends BaseConfig
         'toolbar' => \CodeIgniter\Filters\DebugToolbar::class,
         'honeypot' => \CodeIgniter\Filters\Honeypot::class,
         'verifyRefreshToken' => \App\Filters\VerifyRefreshToken::class,
-        'userAuth' => \App\Filters\UserAuth::class,
         'verifyAuthorization' => \App\Filters\VerifyAuthorization::class,
     ];
 
@@ -48,21 +47,10 @@ class Filters extends BaseConfig
                 API_PATH . '/user/change-pw',
                 API_PATH . '/user/profile',
                 API_PATH . '/user/update-profile',
-                API_PATH . '/user/userList',
                 API_PATH . '/order',
                 API_PATH . '/order/*',
                 API_PATH . '/payment/chillpay',
-                'dashboard/*',
             ],
-        ],
-        'userAuth' => [
-            'before' => [
-                'user/*',
-                'dashboard',
-                'dashboard/*',
-                'adminmanagement',
-                'adminmanagement/*',
-                ]
         ],
     ];
 }

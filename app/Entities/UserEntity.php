@@ -6,17 +6,14 @@ use CodeIgniter\Model;
 
 class UserEntity extends Model
 {
-    protected $table = 'member';
-    protected $primaryKey = 'member_id ';
+    protected $table = 'users';
+    protected $primaryKey = 'id';
     protected $returnType = 'array';
     protected $allowedFields = [
-        'member_id ',
+        'id',
         'username',
         'password',
         'firstname',
         'lastname',
-        'province',
-        'amphur',
-        'district',
     ];
 }
