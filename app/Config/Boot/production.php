@@ -29,26 +29,26 @@ defined('CI_DEBUG') || define('CI_DEBUG', 0);
 define(
     'DEFAULT_DATABSE',
     array(
-        'DSN' => '',
-        'hostname' => 'localhost',
-        'username' => 'admin_dbhr',
-        'password' => 'a5YW8Xvj',
-        'database' => 'admin_dbhr',
-        'DBDriver' => 'MySQLi',
-        'DBPrefix' => '',
-        'pConnect' => false,
-        'DBDebug' => false,
-        'cacheOn' => false,
-        'cacheDir' => '',
-        'charset' => 'utf8',
-        'DBCollat' => 'utf8_general_ci',
-        'swapPre' => '',
-        'encrypt' => false,
-        'compress' => false,
-        'strictOn' => false,
-        'failover' => [],
-        'port' => 3306
-    ),
+      'DSN'      => '',
+      'hostname' => 'localhost',
+      'username' => 'admin_eport',
+      'password' => 'HkgjpReZ',
+      'database' => 'admin_eport',
+      'DBDriver' => 'MySQLi',
+      'DBPrefix' => '',
+      'pConnect' => false,
+      'DBDebug'  => true,
+      'cacheOn'  => false,
+      'cacheDir' => '',
+      'charset'  => 'utf8',
+      'DBCollat' => 'utf8_general_ci',
+      'swapPre'  => '',
+      'encrypt'  => false,
+      'compress' => false,
+      'strictOn' => false,
+      'failover' => [],
+      'port'     => 3306
+    )
 );
 
 /*
