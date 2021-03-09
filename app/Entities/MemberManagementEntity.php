@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class MemberManagementEntity extends Model
+class MembermanagementEntity extends Model
 {
     protected $table = 'member';
     protected $primaryKey = 'member_id';

@@ -76,6 +76,22 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseJob" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-scroll"></i>
+            <span>จัดการข้อมูลประกาศ</span>
+        </a>
+        <div id="collapseJob" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">เมนูจัดการข้อมูลประกาศ:</h6>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/getjoblist"><i class="fas fa-fw fa-scroll"></i> รายชื่อประกาศ</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/approvejob"><i class="fas fa-fw fa-clipboard-check"></i> อนุมัติประกาศ</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/hisjob"><i class="fas fa-fw fa-history"></i> ประวัติการประกาศ</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/banjob"><i class="fas fa-fw fa-ban"></i> บัญชีที่ถูกระงับประกาศ</a>
+                <!-- <a class="collapse-item" href="cards.html">Cards</a> -->
+            </div>
+        </div>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -115,11 +131,11 @@
         <div id="collapsePage" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">จัดการเนื้อหาเพจ:</h6>
-                <a class="collapse-item" href="<?php echo site_url();?>adminmanagement/about"><i class="fas fa-fw fa-file-alt"></i> เกี่ยวกับเรา</a>
-                <a class="collapse-item" href="<?php echo site_url();?>adminmanagement/policy"><i class="fas fa-fw fa-file-alt"></i> นโยบายความเป็นส่วนตัว</a>
-                <a class="collapse-item" href="<?php echo site_url();?>adminmanagement/provision"><i class="fas fa-fw fa-file-alt"></i> ข้อกำหนดและเงื่อนไข</a>
-                <a class="collapse-item" href="<?php echo site_url();?>adminmanagement/help"><i class="fas fa-fw fa-file-alt"></i> ช่วยเหลือ</a>
-                <a class="collapse-item" href="<?php echo site_url();?>adminmanagement/contact"><i class="fas fa-fw fa-file-alt"></i> ติดต่อเรา</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/about"><i class="fas fa-fw fa-file-alt"></i> เกี่ยวกับเรา</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/policy"><i class="fas fa-fw fa-file-alt"></i> นโยบายความเป็นส่วนตัว</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/provision"><i class="fas fa-fw fa-file-alt"></i> ข้อกำหนดและเงื่อนไข</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/help"><i class="fas fa-fw fa-file-alt"></i> ช่วยเหลือ</a>
+                <a class="collapse-item" href="<?php echo site_url(); ?>adminmanagement/contact"><i class="fas fa-fw fa-file-alt"></i> ติดต่อเรา</a>
             </div>
         </div>
     </li>

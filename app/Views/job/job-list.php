@@ -17,62 +17,64 @@
 			<div class="card shadow mb-4">
 				<!-- Card Header - Dropdown -->
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-					<h6 class="m-0 font-weight-bold text-primary">รายชื่อสมาชิกที่ถูกแบน</h6>
+					<h6 class="m-0 font-weight-bold text-primary">รายการประกาศงาน</h6>
+
 				</div>
 				<!-- Card Body -->
+
 				<div class="card-body">
-
-					<table class="table">
-						<thead>
-							<tr>
-									<th scope="col">ID</th>
-									<th scope="col">ชื่อสมาชิก</th>
-									<th scope="col">Email</th>
-									<th scope="col">วันที่สมัคร</th>
-									<th scope="col">จัดการ</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php foreach ($data as $item) : ?>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
 								<tr>
-									<th><?= $item['member_id']; ?></th>
-									<td><?= $item['fullname']; ?></td>
-									<td><?= $item['member_email']; ?></td>
-									<td><?= $item['created_at']; ?></td>
-									<td>
-										<a class="btn btn-success chrb" style="color :#FFF" data-id="<?= $item['member_id']; ?>" data-toggle="modal" data-target="#requestInfo" aria-label="Close" role="button"><i class="fas fa-eye"></i></a>
-										<a class="btn btn-success" value="<?= $item['fullname']; ?>" onclick="confirmBan(event)" href="<?php echo site_url(); ?>/adminmanagement/unbanmember/<?= $item['member_id']; ?>" role="button"><i class="fas fa-sign-in-alt"></i></a>
-										<a class="btn btn-danger" value="<?= $item['fullname']; ?>" onclick="confirmDelete(event)" href="<?= base_url(); ?>/adminmanagement/deletemember/<?= $item['member_id']; ?>" role="button"><i class="fas fa-trash"></i></a>
-									</td>
-								</tr>
-							<?php endforeach; ?>
-							<!-- modal -->
-							<div class="container">
-								<div class="modal fade" id='requestInfo' role='dialog'>
-									<div class="modal-dialog modal-lg">
 
-										<div class="modal-content">
-											<div class="modal-header">
-												<h4 class="col-12 modal-title text-center">รายละเอียดสมาชิก</h4>
-												<button type='button' class='close' data-dismiss='modal'>&times;</button>
+									<th scope="col">ID</th>
+									<th scope="col">ชื่อประกาศ</th>
+									<th scope="col">ชื่อบริษัท</th>
+									<th scope="col">วันลงประกาศ</th>
+									<th scope="col">จัดการ</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach ($data as $item) : ?>
+									<tr>
+										<th><?= $item['id']; ?></th>
+										<td><?= $item['job_name']; ?></td>
+										<td><?= $item['cou_name_th']; ?></td>
+										<td><?= $item['job_name']; ?></td>
+										<td>
+										<a class="btn btn-info" href="<?php echo site_url(); ?>adminmanagement/editjob/<?= $item['id']; ?>" role="button"><i class="fas fa-edit"></i></a>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+								<div class="container">
+									<div class="modal fade" id='requestInfo' role='dialog'>
+										<div class="modal-dialog modal-lg">
+
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="col-12 modal-title text-center">รายละเอียดประกาศ</h4>
+													<button type='button' class='close' data-dismiss='modal'>&times;</button>
+												</div>
+												<div class="modal-body"></div>
 											</div>
-											<div class="modal-body"></div>
-											<!-- <div class="modal-footer">
-												</div> -->
 										</div>
 									</div>
 								</div>
-							</div>
-							<!-- end modal -->
-
-
-						</tbody>
-					</table>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
 <script>
 	function confirmDelete(ev) {
 		ev.preventDefault();
@@ -102,8 +104,8 @@
 		var name = ev.currentTarget.getAttribute('value');
 		console.log(urlToRedirect);
 		Swal.fire({
-			title: ' ยืนยันการปลดแบน',
-			text: ' ต้องการปลดแบน ' + name + ' ?',
+			title: ' ยืนยันการแบน',
+			text: ' ต้องการแบน ' + name + ' ?',
 			icon: 'question',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -120,8 +122,10 @@
 </script>
 <script type="text/javascript">
 	$().ready(function() {
-		$('.chrb').click(function() {
+		// console.log("reqid")
+		$('.chreq').click(function() {
 			var reqid = $(this).data('id');
+			//   console.log(reqid)
 			$.ajax({
 				url: '<?php echo site_url(); ?>adminmanagement/getmember',
 				type: 'post',
@@ -129,7 +133,7 @@
 					reqid: reqid
 				},
 				success: function(response) {
-					//   alert(response)
+					// console.log(response)
 					$('.modal-body').html(response);
 					$('#requestInfo').modal('show');
 				}

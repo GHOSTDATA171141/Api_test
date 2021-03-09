@@ -3,7 +3,7 @@
 namespace App\Modules\Adminmanagement\Models;
 
 use App\Entities\AdminmanagementEntity;
-use App\Entities\MemberManagementEntity;
+use App\Entities\MembermanagementEntity;
 use App\Entities\COUEntity;
 use App\Entities\ContactEntity;
 use App\Entities\AboutEntity;
@@ -20,7 +20,7 @@ class AdminmanagementModel
         $this->contentaboutentity = new AboutEntity();
         $this->contentpolicyentity = new PolicyEntity();
         $this->adminEntity = new AdminmanagementEntity();
-        $this->membermanagementEntity = new MemberManagementEntity();
+        $this->membermanagementEntity = new MembermanagementEntity();
         $this->provisionEntity = new ProvisionEntity();
         $this->helpEntity = new HelpEntity();
         $this->couEntity = new COUEntity();
@@ -52,11 +52,11 @@ class AdminmanagementModel
     {
 
         try {
-            $reponse = $this->adminEntity->update($id, $data);
+            $response = $this->adminEntity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -77,11 +77,11 @@ class AdminmanagementModel
                 'admin_id' => $userId,
             );
 
-            $reponse = $this->adminEntity->where($condition)->delete();
+            $response = $this->adminEntity->where($condition)->delete();
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -174,11 +174,11 @@ class AdminmanagementModel
         }
 
         try {
-            $reponse = $this->adminEntity->insert($data);
+            $response = $this->adminEntity->insert($data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -194,11 +194,11 @@ class AdminmanagementModel
     {
 
         try {
-            $reponse = $this->adminEntity->update($id, $data);
+            $response = $this->adminEntity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -219,7 +219,6 @@ class AdminmanagementModel
             ->get()->getResultArray();
         return $result;
     }
-
     //ดีงข้อมูลสมาชิกตัวเดียว
     public function getMemberById($id)
     {
@@ -273,11 +272,11 @@ class AdminmanagementModel
     public function updateMemberById($member_id, $data)
     {
         try {
-            $reponse = $this->membermanagementEntity->update($member_id, $data);
+            $response = $this->membermanagementEntity->update($member_id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -296,11 +295,11 @@ class AdminmanagementModel
             $condition = array(
                 'member_id' => $id,
             );
-            $reponse = $this->membermanagementEntity->where($condition)->delete();
+            $response = $this->membermanagementEntity->where($condition)->delete();
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -344,11 +343,11 @@ class AdminmanagementModel
     public function updatecompanyById($cou_id, $data)
     {
         try {
-            $reponse = $this->couEntity->update($cou_id, $data);
+            $response = $this->couEntity->update($cou_id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -366,11 +365,11 @@ class AdminmanagementModel
             $condition = array(
                 'cou_id' => $cou_id,
             );
-            $reponse = $this->couEntity->where($condition)->delete();
+            $response = $this->couEntity->where($condition)->delete();
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -444,11 +443,11 @@ class AdminmanagementModel
     public function updateUniversityById($id, $data)
     {
         try {
-            $reponse = $this->couEntity->update($id, $data);
+            $response = $this->couEntity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -469,11 +468,11 @@ class AdminmanagementModel
 
             //!ดักหาก ID ที่ลบไม่ใช้ Admin ไม่อนุญาติให้ลบ
 
-            $reponse = $this->couEntity->where($condition)->delete();
+            $response = $this->couEntity->where($condition)->delete();
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -555,11 +554,11 @@ class AdminmanagementModel
     public function updateProvisionById($id, $data)
     {
         try {
-            $reponse = $this->provisionEntity->update($id, $data);
+            $response = $this->provisionEntity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -574,11 +573,11 @@ class AdminmanagementModel
     public function updateContactById($id, $data)
     {
         try {
-            $reponse = $this->contentmanagementEntity->update($id, $data);
+            $response = $this->contentmanagementEntity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -593,11 +592,11 @@ class AdminmanagementModel
     public function updateAboutById($id, $data)
     {
         try {
-            $reponse = $this->contentaboutentity->update($id, $data);
+            $response = $this->contentaboutentity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -612,11 +611,11 @@ class AdminmanagementModel
     public function updatePolicyById($id, $data)
     {
         try {
-            $reponse = $this->contentpolicyentity->update($id, $data);
+            $response = $this->contentpolicyentity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -631,11 +630,11 @@ class AdminmanagementModel
     public function updateHelpById($id,$data)
     {
         try {
-            $reponse = $this->helpEntity->update($id, $data);
+            $response = $this->helpEntity->update($id, $data);
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -646,5 +645,24 @@ class AdminmanagementModel
             );
             return $result;
         }
+    }
+///// Job 
+    //    join table job and cou
+    public function getAllJob()
+    {
+        $jobTable = $this->db->table('job');
+        $result = $jobTable->select('*')
+        ->join('cou', 'job.cou_id = cou.cou_id')
+            ->get()->getResultArray();
+        return $result;
+    }
+    public function getJobById($id)
+    {
+        $condition = array('id' => $id);
+        $jobTable = $this->db->table('job');
+        $result = $jobTable->select('*')->where($condition)
+        ->join('cou', 'job.cou_id = cou.cou_id')
+            ->get()->getResultArray();
+        return $result;
     }
 }

@@ -7,64 +7,67 @@ if(!isset($routes))
 
 $routes->group('adminmanagement', ['namespace' => 'App\Modules\Adminmanagement\Controllers'], function($subroutes){
 ///// Admin
-	$subroutes->add('', 'AdminManagement::index');
-	$subroutes->get('add', 'AdminManagement::add');
-	$subroutes->get('editadmin/(:num)', 'AdminManagement::edit/$1');
-	$subroutes->post('editeditadmin/(:num)', 'AdminManagement::update');
-	$subroutes->get('deleteadmin/(:num)', 'AdminManagement::delete/$1');
-	$subroutes->get('changepassword', 'AdminManagement::changepassword');
-	$subroutes->post('changepassword', 'AdminManagement::changepasswordprocess');
-	$subroutes->post('add', 'AdminManagement::addadmin');
-	$subroutes->get('getprovince', 'AdminManagement::getprovince');
-	$subroutes->post('getamphur', 'AdminManagement::getamphur');
-	$subroutes->post('getdistrict', 'AdminManagement::getdistrict');
+	$subroutes->add('', 'Adminmanagement::index');
+	$subroutes->get('add', 'Adminmanagement::add');
+	$subroutes->get('editadmin/(:num)', 'Adminmanagement::edit/$1');
+	$subroutes->post('editeditadmin/(:num)', 'Adminmanagement::update');
+	$subroutes->get('deleteadmin/(:num)', 'Adminmanagement::delete/$1');
+	$subroutes->get('changepassword', 'Adminmanagement::changepassword');
+	$subroutes->post('changepassword', 'Adminmanagement::changepasswordprocess');
+	$subroutes->post('add', 'Adminmanagement::addadmin');
+	$subroutes->get('getprovince', 'Adminmanagement::getprovince');
+	$subroutes->post('getamphur', 'Adminmanagement::getamphur');
+	$subroutes->post('getdistrict', 'Adminmanagement::getdistrict');
 ///// Member
-	$subroutes->add('getlistmember', 'AdminManagement::getPagememberlist');
-	$subroutes->get('approvemember', 'AdminManagement::getPageApproveMembers');
-	$subroutes->get('banmember', 'AdminManagement::getPagememberBanList');
-	$subroutes->get('hismember', 'AdminManagement::getPagememberHistory');
-	$subroutes->get('editmember/(:num)','AdminManagement::getPageEditMember/$1');
-	$subroutes->post('getmember', 'AdminManagement::getMemberShowPage');
-	$subroutes->post('editmember/(:num)', 'AdminManagement::updatememberProcess');
-	$subroutes->get('approvemember/(:num)', 'AdminManagement::approvememberProcess/$1');
-	$subroutes->get('banmember/(:num)', 'AdminManagement::banmemberProcess/$1');
-	$subroutes->get('unbanmember/(:num)', 'AdminManagement::unbanmemberProcess/$1');
-	$subroutes->get('deletemember/(:num)', 'AdminManagement::deletememberProcess/$1');
+	$subroutes->add('getlistmember', 'Adminmanagement::getPagememberlist');
+	$subroutes->get('approvemember', 'Adminmanagement::getPageApproveMembers');
+	$subroutes->get('banmember', 'Adminmanagement::getPagememberBanList');
+	$subroutes->get('hismember', 'Adminmanagement::getPagememberHistory');
+	$subroutes->get('editmember/(:num)','Adminmanagement::getPageEditMember/$1');
+	$subroutes->post('getmember', 'Adminmanagement::getMemberShowPage');
+	$subroutes->post('editmember/(:num)', 'Adminmanagement::updatememberProcess');
+	$subroutes->get('approvemember/(:num)', 'Adminmanagement::approvememberProcess/$1');
+	$subroutes->get('banmember/(:num)', 'Adminmanagement::banmemberProcess/$1');
+	$subroutes->get('unbanmember/(:num)', 'Adminmanagement::unbanmemberProcess/$1');
+	$subroutes->get('deletemember/(:num)', 'Adminmanagement::deletememberProcess/$1');
 /////// Company
-	$subroutes->add('getcompanylist', 'AdminManagement::getPagecompanylist');
-	$subroutes->get('approvecompany', 'AdminManagement::getPageApproveCompany');
-	$subroutes->get('bancompany', 'AdminManagement::getPagecompanyBanList');
-	$subroutes->get('hiscompany', 'AdminManagement::getPagecompanyHistory');
-	$subroutes->get('editcompany/(:num)', 'AdminManagement::getPageEditCompany/$1');
-	$subroutes->post('getcompany', 'AdminManagement::getCompanyShowPage');
-	$subroutes->post('editcom/(:num)', 'AdminManagement::updatecompanyProcess');
-	$subroutes->get('approvecompany/(:num)', 'AdminManagement::approvecompanyProcess/$1');
-	$subroutes->get('bancompany/(:num)', 'AdminManagement::bancompanyProcess/$1');
-	$subroutes->get('unbancompany/(:num)', 'AdminManagement::unbancompanyProcess/$1');
-	$subroutes->get('deletecompany/(:num)', 'AdminManagement::deletecompanyProcess/$1');
+	$subroutes->add('getcompanylist', 'Adminmanagement::getPagecompanylist');
+	$subroutes->get('approvecompany', 'Adminmanagement::getPageApproveCompany');
+	$subroutes->get('bancompany', 'Adminmanagement::getPagecompanyBanList');
+	$subroutes->get('hiscompany', 'Adminmanagement::getPagecompanyHistory');
+	$subroutes->get('editcompany/(:num)', 'Adminmanagement::getPageEditCompany/$1');
+	$subroutes->post('getcompany', 'Adminmanagement::getCompanyShowPage');
+	$subroutes->post('editcom/(:num)', 'Adminmanagement::updatecompanyProcess');
+	$subroutes->get('approvecompany/(:num)', 'Adminmanagement::approvecompanyProcess/$1');
+	$subroutes->get('bancompany/(:num)', 'Adminmanagement::bancompanyProcess/$1');
+	$subroutes->get('unbancompany/(:num)', 'Adminmanagement::unbancompanyProcess/$1');
+	$subroutes->get('deletecompany/(:num)', 'Adminmanagement::deletecompanyProcess/$1');
 ///// University
-	$subroutes->get('getuniversitylist','AdminManagement::getPageuniversitylist');
-	$subroutes->get('approveuniversity', 'AdminManagement::getPageApproveUniversity');
-	$subroutes->get('banuniversity', 'AdminManagement::getPageBanUniversityList');
-	$subroutes->get('hisuniversity', 'AdminManagement::getPageHistoryUniversity');
-	$subroutes->get('edituniversity/(:num)', 'AdminManagement::getPageEditUniversity/$1');
-	$subroutes->post('getUniversitylistshow', 'AdminManagement::getUniversityShowPage');
-	$subroutes->post('edituniversity/(:num)', 'AdminManagement::updateUniversityProcess');
-	$subroutes->get('approveuniversity/(:num)', 'AdminManagement::approveUniversityProcess/$1');
-	$subroutes->get('banuniversity/(:num)', 'AdminManagement::banUniversityProcess/$1');
-	$subroutes->get('unbanuniversity/(:num)', 'AdminManagement::unbanuniversityProcess/$1');
-	$subroutes->get('deleteuniversity/(:num)', 'AdminManagement::deleteuniversityProcess/$1');
+	$subroutes->get('getuniversitylist','Adminmanagement::getPageuniversitylist');
+	$subroutes->get('approveuniversity', 'Adminmanagement::getPageApproveUniversity');
+	$subroutes->get('banuniversity', 'Adminmanagement::getPageBanUniversityList');
+	$subroutes->get('hisuniversity', 'Adminmanagement::getPageHistoryUniversity');
+	$subroutes->get('edituniversity/(:num)', 'Adminmanagement::getPageEditUniversity/$1');
+	$subroutes->post('getUniversitylistshow', 'Adminmanagement::getUniversityShowPage');
+	$subroutes->post('edituniversity/(:num)', 'Adminmanagement::updateUniversityProcess');
+	$subroutes->get('approveuniversity/(:num)', 'Adminmanagement::approveUniversityProcess/$1');
+	$subroutes->get('banuniversity/(:num)', 'Adminmanagement::banUniversityProcess/$1');
+	$subroutes->get('unbanuniversity/(:num)', 'Adminmanagement::unbanuniversityProcess/$1');
+	$subroutes->get('deleteuniversity/(:num)', 'Adminmanagement::deleteuniversityProcess/$1');
 ////// Content
-	$subroutes->get('provision','AdminManagement::getProvision');
-	$subroutes->get('contact','AdminManagement::getContact');
-	$subroutes->get('about','AdminManagement::getAbout');
-	$subroutes->get('policy','AdminManagement::getPolicy');
-	$subroutes->get('help','AdminManagement::getHelp');
-	$subroutes->post('provision','AdminManagement::updateProvisionProcess');
-	$subroutes->post('contact','AdminManagement::updateContactProcess');
-	$subroutes->post('about','AdminManagement::updateAboutProcess');
-	$subroutes->post('policy','AdminManagement::updatePolicyProcess');
-	$subroutes->post('help','AdminManagement::updateHelpProcess');
+	$subroutes->get('provision','Adminmanagement::getProvision');
+	$subroutes->get('contact','Adminmanagement::getContact');
+	$subroutes->get('about','Adminmanagement::getAbout');
+	$subroutes->get('policy','Adminmanagement::getPolicy');
+	$subroutes->get('help','Adminmanagement::getHelp');
+	$subroutes->post('provision','Adminmanagement::updateProvisionProcess');
+	$subroutes->post('contact','Adminmanagement::updateContactProcess');
+	$subroutes->post('about','Adminmanagement::updateAboutProcess');
+	$subroutes->post('policy','Adminmanagement::updatePolicyProcess');
+	$subroutes->post('help','Adminmanagement::updateHelpProcess');
+/////// JOB
+	$subroutes->get('getjoblist','Adminmanagement::getPageJoblist');
+	$subroutes->get('editjob/(:num)','Adminmanagement::getPageJobedit/$1');
 
 
 

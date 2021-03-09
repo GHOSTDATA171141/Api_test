@@ -1,11 +1,11 @@
-<?php namespace App\Modules\MemberManagement\Controllers;
+<?php namespace App\Modules\Membermanagement\Controllers;
 
-use App\Modules\MemberManagement\Repositories\MemberManagementRepositories;
+use App\Modules\Membermanagement\Repositories\MembermanagementRepositories;
 use CodeIgniter\API\ResponseTrait;
 use App\Libraries\APIRequest;
 
 
-class MemberManagement extends BaseController
+class Membermanagement extends BaseController
 {
     
     use ResponseTrait;
@@ -18,7 +18,7 @@ class MemberManagement extends BaseController
     public function __construct()
     {
         $this->apiRequest = new APIRequest();
-        $this->membermanagementRepositories = new MemberManagementRepositories();
+        $this->membermanagementRepositories = new MembermanagementRepositories();
     }
     public function apiAllmember()
     {
@@ -53,9 +53,6 @@ class MemberManagement extends BaseController
             'username' => 'required|string',
             'firstname' => 'required|string',
             'lastname' => 'required|string',
-            'province'=>'required|string',
-            'amphur'=>'required|string',
-            'district'=>'required|string',
         ];
         $request = $this->apiRequest->getRequestInput($this->request);
         if (!$this->apiRequest->validateRequest($request, $rules)) {
@@ -63,6 +60,7 @@ class MemberManagement extends BaseController
         }
         return $this->setResponseFormat('json')->respond($this->membermanagementRepositories->apimemberEditById($request), 200);
     }
+
     public function apideletememberById()
     {
         $request = $this->apiRequest->getRequestInput($this->request);

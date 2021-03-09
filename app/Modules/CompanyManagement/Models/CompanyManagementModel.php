@@ -1,8 +1,8 @@
-<?php namespace App\Modules\CompanyManagement\Models;
+<?php namespace App\Modules\Companymanagement\Models;
 			
 use App\Entities\COUEntity;
 
-class CompanyManagementModel
+class CompanymanagementModel
 {
 	public function __construct()
     {

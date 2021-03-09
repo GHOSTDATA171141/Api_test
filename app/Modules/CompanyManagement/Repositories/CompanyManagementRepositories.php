@@ -1,11 +1,11 @@
-<?php namespace App\Modules\CompanyManagement\Repositories;
+<?php namespace App\Modules\Companymanagement\Repositories;
 
-use App\Modules\CompanyManagement\Models\CompanyManagementModel;
+use App\Modules\Companymanagement\Models\CompanymanagementModel;
 use CodeIgniter\Controller;
 use CodeIgniter\I18n\Time;
 use DateTime;
 use App\Libraries\Logger;
-class CompanyManagementRepositories extends Controller
+class CompanymanagementRepositories extends Controller
 {
     private $companymanagementModel;
 
@@ -15,7 +15,7 @@ class CompanyManagementRepositories extends Controller
     public function __construct()
     {
         $this->logger = new Logger();
-        $this->companymanagementModel = new CompanyManagementModel();
+        $this->companymanagementModel = new CompanymanagementModel();
     }
     public function companyRegister($request)
     {

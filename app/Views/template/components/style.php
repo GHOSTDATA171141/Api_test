@@ -10,6 +10,10 @@
             font-family: 'Kanit', sans-serif;
         }
 
+        .table-responsive {
+            display: table;
+        }
+
 
         /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,

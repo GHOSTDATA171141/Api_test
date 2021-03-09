@@ -1,12 +1,12 @@
-<?php namespace App\Modules\MemberManagement\Repositories;
+<?php namespace App\Modules\Membermanagement\Repositories;
 
-use App\Modules\MemberManagement\Models\MemberManagementModel;
+use App\Modules\Membermanagement\Models\MembermanagementModel;
 use CodeIgniter\Controller;
 use CodeIgniter\I18n\Time;
 use DateTime;
 use App\Libraries\Logger;
 
-class MemberManagementRepositories extends Controller
+class MembermanagementRepositories extends Controller
 {
     private $membermanagementModel;
 
@@ -16,7 +16,7 @@ class MemberManagementRepositories extends Controller
     public function __construct()
     {
         $this->logger = new Logger();
-        $this->membermanagementModel = new MemberManagementModel();
+        $this->membermanagementModel = new MembermanagementModel();
     }
     ///API
     public function apiAllmember()
@@ -28,10 +28,11 @@ class MemberManagementRepositories extends Controller
     {
         $data = [
             'username' => $request['payloads']['username'],
+            'member_email' => $request['payloads']['username'],
             'password' => password_hash($request['payloads']['password'], PASSWORD_DEFAULT),
             'firstname' => $request['payloads']['firstname'],
             'lastname' => $request['payloads']['lastname'],
-            'fullname' => $request['payloads']['firstname']+['lastname'],
+            'fullname' => $request['payloads']['firstname'].' '.$request['payloads']['lastname'],
 
         ];
         $response =  $this->membermanagementModel->getmemberRegisterModel($data);
@@ -57,11 +58,10 @@ class MemberManagementRepositories extends Controller
         $id = $request['payloads']['id'];
         $data = [
             'username' => $request['payloads']['username'],
+            'member_email' => $request['payloads']['username'],
             'firstname' => $request['payloads']['firstname'],
             'lastname' => $request['payloads']['lastname'],
-            'province' => $request['payloads']['province'],
-            'amphur' => $request['payloads']['amphur'],
-            'district' => $request['payloads']['district'],
+            'fullname' => $request['payloads']['firstname'].' '.$request['payloads']['lastname'],
         ];
         $response =  $this->membermanagementModel->getmemberEditModel($id,$data);
         $this->logger->writeApiLogs($request, $response,'member-edit');

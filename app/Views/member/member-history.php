@@ -27,12 +27,11 @@
 					<table class="table">
 						<thead>
 							<tr>
-
-								<th scope="col">ID</th>
-								<th scope="col">Name</th>
-								<th scope="col">Email</th>
-								<th scope="col">Date Approve</th>
-								<th scope="col">Action</th>
+									<th scope="col">ID</th>
+									<th scope="col">ชื่อสมาชิก</th>
+									<th scope="col">Email</th>
+									<th scope="col">วันที่อนุมัติ</th>
+									<th scope="col">จัดการ</th>
 
 							</tr>
 						</thead>

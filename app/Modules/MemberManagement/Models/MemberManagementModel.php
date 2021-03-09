@@ -1,15 +1,17 @@
-<?php namespace App\Modules\MemberManagement\Models;
-			
-use App\Entities\MemberManagementEntity;
+<?php
 
-class MemberManagementModel
+namespace App\Modules\Membermanagement\Models;
+
+use App\Entities\MembermanagementEntity;
+
+class MembermanagementModel
 {
-	public function __construct()
+    public function __construct()
     {
-        $this->membermanagementEntity = new MemberManagementEntity();        
+        $this->membermanagementEntity = new MembermanagementEntity();
         $this->db = \Config\Database::connect();
     }
-    
+
     //ดึงข้อมูลสมาชิกทั้งหมด
     public function getAllMembers()
     {
@@ -17,7 +19,6 @@ class MemberManagementModel
         $result = $membermanagementTable->select('*')
             ->get()->getResultArray();
         return $result;
-
     }
 
     //ดีงข้อมูลสมาชิกตัวเดียว
@@ -37,11 +38,11 @@ class MemberManagementModel
             $condition = array(
                 'member_id' => $id,
             );
-            $reponse = $this->membermanagementEntity->where($condition)->delete();
+            $response = $this->membermanagementEntity->where($condition)->delete();
             $result = array(
                 'resultCode' => 200,
                 'resultMessage' => 'Success',
-                'data' => $reponse
+                'data' => $response
             );
             return $result;
         } catch (\Exception $e) {
@@ -84,18 +85,29 @@ class MemberManagementModel
             );
             return $result;
         }
-
     }
-    public function getmemberEditModel($id,$data)
+
+    public function getmemberEditModel($id, $data)
     {
+
         try {
-            $reponse = $this->membermanagementEntity->update($id,$data);
-            $result = array(
-                'resultCode' => 200,
-                'resultMessage' => 'Success',
-                'data' => $reponse
-            );
-            return $result;
+
+            $exist = $this->membermanagementEntity->find($id);
+            if ($exist != null) {
+                $response = $this->membermanagementEntity->update($id, $data);
+                $result = array(
+                    'resultCode' => 200,
+                    'resultMessage' => 'Success',
+                    'data' => $response
+                );
+                return $result;
+            } else {
+                $result = array(
+                    'resultCode' => 500,
+                    'resultMessage' => 'Not Found ID'
+                );
+                return $result;
+            }
         } catch (\Exception $e) {
 
             $result = array(
@@ -105,9 +117,4 @@ class MemberManagementModel
             return $result;
         }
     }
-   
- 
-   
 }
-	
-	

@@ -1,4 +1,4 @@
-<?php namespace App\Modules\CompanyManagement\Controllers;
+<?php namespace App\Modules\Companymanagement\Controllers;
 
 use CodeIgniter\Controller;
 

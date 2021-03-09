@@ -17,9 +17,10 @@ class AdminmanagementRepositories extends Controller
      */
     public function __construct()
     {
-        $this->adminmanagementModel = new AdminManagementModel();
+        $this->adminmanagementModel = new AdminmanagementModel();
         $this->userModel = new UserModel();
     }
+///// admin
 
     public function getAdminPage()
     {
@@ -1049,5 +1050,30 @@ class AdminmanagementRepositories extends Controller
             return redirect()->back()->with('notification-danger', '<b>ขออภัย!</b> เกิดข้อผิดพลาด กรุณาลองอีกครั้ง..');
         }
         
+    }
+
+//// Job 
+    public function getPageJob()
+    {
+        $job = $this->adminmanagementModel->getAllJob();
+        $data = [
+            'title' => 'Job Management',
+            'view' => 'job/job-list',
+            'data' => $job,
+        ];
+        // dd($data);
+        return view('template/layout', $data);
+    }
+    public function getPagedit($id)
+    {
+        $job = $this->adminmanagementModel->getJobById($id);
+        $data = [
+            'title' => 'Job Management',
+            'view' => 'job/job-edit',
+            'data' => $job,
+        ];
+        // dd($id);
+        return view('template/layout', $data);
+
     }
 }

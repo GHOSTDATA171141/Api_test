@@ -13,6 +13,7 @@ class Adminmanagement extends BaseController
     {
         $this->adminmanagementRepositories = new AdminmanagementRepositories();
     }
+////// admin
     public function index()
     {
         return $this->adminmanagementRepositories->getAdminPage();
@@ -252,5 +253,15 @@ class Adminmanagement extends BaseController
     {
         return $this->adminmanagementRepositories->updateHelpProcess($this->request);
     }
+//////Job
+    public function getPageJoblist()
+    {
+        return $this->adminmanagementRepositories->getPageJob();
+    }
+    public function getPageJobedit($id)
+    {
+        return $this->adminmanagementRepositories->getPagedit($id);
+    }
+
 
 }

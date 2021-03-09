@@ -1,9 +1,9 @@
-<?php namespace App\Modules\CompanyManagement\Controllers;
+<?php namespace App\Modules\Companymanagement\Controllers;
 
-use App\Modules\CompanyManagement\Repositories\CompanyManagementRepositories;
+use App\Modules\Companymanagement\Repositories\CompanymanagementRepositories;
 use CodeIgniter\API\ResponseTrait;
 use App\Libraries\APIRequest;
-class CompanyManagement extends BaseController
+class Companymanagement extends BaseController
 {
     use ResponseTrait;
 	private $companymanagementRepositories;
@@ -14,7 +14,7 @@ class CompanyManagement extends BaseController
     public function __construct()
     {
         $this->apiRequest = new APIRequest();
-        $this->companymanagementRepositories = new CompanyManagementRepositories();
+        $this->companymanagementRepositories = new CompanymanagementRepositories();
     }
 
     public function apicompanyRegister()
